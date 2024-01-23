@@ -1,0 +1,12 @@
+@import './variables';
+
+html,
+body {
+    height: 100%;
+    font-family: $font-family-sans, sans-serif;
+    font-size: $font-size-base;
+}
+
+#root {
+    height: 100%;
+}
