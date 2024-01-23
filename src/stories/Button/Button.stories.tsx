@@ -1,15 +1,18 @@
+import type { Meta } from '@storybook/react'
 import Button from './Button'
 import { options } from './constants'
 
-export default {
+const meta: Meta<typeof Button> = {
     title: 'Button',
     component: Button,
     tags: ['autodocs'],
 }
 
+export default meta
+
 export const Default = () => <Button />
 
-export const Colors = () =>
+export const Types = () =>
     options.types.map((type, index) => {
         return <Button key={index} type={type} />
     })
