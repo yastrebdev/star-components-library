@@ -1,16 +1,14 @@
 @import '../../styles/variables';
+@import '../../styles/mixin';
 
 .button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include display-flex(center, center);
     width: 100%;
     border-radius: 50px;
     border: 1px solid transparent;
     transition: all 0.3s ease-in;
     font-style: normal;
     font-weight: 400;
-    line-height: 20px;
     cursor: pointer;
 
     &__type-primary {
@@ -20,15 +18,21 @@
     &__type-secondary {
         background-color: $button-bg-secondary;
         border-color: $button-border-secondary;
-        color: $button-text-primary;
+        color: $button-text-secondary;
     }
 
     &__size-sm {
-        padding: 10px;
-        font-size: 14px;
+        @include button-size-param(7px 12px, 14px, 22px);
+        letter-spacing: 0.42px;
+    }
+    &__size-md {
+        @include button-size-param(12px, 16px, 20px);
     }
     &__size-lg {
-        padding: 18px;
-        font-size: 18px;
+        @include button-size-param;
+    }
+
+    &__icon {
+        @include display-flex(center, space-between)
     }
 }

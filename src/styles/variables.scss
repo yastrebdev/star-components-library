@@ -1,10 +1,20 @@
+// colors
+$BLACK: #000000;
+$GRAY_DARK: #a0a0a0;
+$GRAY: #e8e8e8;
+$GRAY_LIGHT: #f9f9f9;
+$WHITE: #ffffff;
+$GREEN: #ccfd13;
+$VIOLET: #b3bbfd;
+
 $font-family-sans: Value Sans Pro, sans-serif;
-$font-size-base: 10px;
+$font-size-base: 14px;
 
-$button-bg-primary: #ccfd13;
-$button-bg-secondary: #ffffff;
+// button
+$button-bg-primary: $GREEN;
+$button-bg-secondary: $WHITE;
 
-$button-text-primary: #000000;
-$button-text-secondary: #a0a0a0;
+$button-text-primary: $BLACK;
+$button-text-secondary: $GRAY_DARK;
 
-$button-border-secondary: #e8e8e8;
+$button-border-secondary: $GRAY;

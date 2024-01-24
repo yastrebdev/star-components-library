@@ -21,3 +21,8 @@ export const Sizes = () =>
     options.sizes.map((size, index) => {
         return <Button key={index} size={size} />
     })
+
+export const Icon = () =>
+    options.icon.map((i, index) => {
+        return <Button key={index} icon={i} />
+    })
