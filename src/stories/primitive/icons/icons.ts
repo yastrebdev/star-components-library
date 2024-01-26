@@ -24,7 +24,7 @@ import ShareAndroid from '../../assets/icons/share-android.svg?react';
 import Trash from '../../assets/icons/trash.svg?react';
 import Xmark from '../../assets/icons/xmark.svg?react';
 
-const icons = {
+export const icons = {
     ArrowVertical,
     ArrowUpRight,
     Brain,

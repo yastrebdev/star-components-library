@@ -1,6 +1,5 @@
 import type { Preview } from '@storybook/react'
 import 'minireset.css'
-import '../src/styles/global.scss'
 
 const preview: Preview = {
     parameters: {

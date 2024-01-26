@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 @import '../../styles/mixin';
 
-.button {
+.button-scl {
     @include display-flex(center, center);
     width: 100%;
     border-radius: 50px;

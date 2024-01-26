@@ -1,7 +1,7 @@
 import { type CSSProperties, MouseEvent } from 'react'
 import cn from 'classnames'
 import { getIcon, type IconName } from './icons'
-import mod from './style.module.scss'
+import './style.scss'
 
 interface IconProps {
     name?: IconName
@@ -22,14 +22,14 @@ export const Icon = ({
     return (
         <>
             {onClick ? (
-                <button type="button" className={mod.button} onClick={onClick}>
+                <button type="button" className='button' onClick={onClick}>
                     <SvgIcon
                         style={style}
-                        className={cn(mod.icon, className)}
+                        className={cn('icon', className)}
                     />
                 </button>
             ) : (
-                <SvgIcon className={cn(mod.icon, className)} style={style} />
+                <SvgIcon className={cn('icon', className)} style={style} />
             )}
         </>
     )
