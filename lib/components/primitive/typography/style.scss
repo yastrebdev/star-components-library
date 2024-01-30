@@ -1,6 +1,7 @@
 @import '../../../../styles/_variables';
 
 .scl-typography-text {
+    font-family: $font-family-sans;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -10,6 +11,80 @@
 
     &__secondary {
         color: $GRAY_DARK;
+    }
+    &__success {
+        color: $SUCCESS;
+    }
+    &__warning {
+        color: $WARNING;
+    }
+    &__danger {
+        color: $DANGER;
+    }
+
+    &_strong {
+        font-weight: 500;
+    }
+
+    &_bold {
+        font-weight: 700;
+    }
+}
+
+.scl-typography-title {
+    font-family: $font-family-sans;
+    line-height: normal;
+    font-weight: 400;
+    color: $BLACK;
+
+    &__h1 {
+        font-size: 48px;
+        line-height: 38px;
+        font-weight: 500;
+    }
+    &__h2 {
+        font-size: 32px;
+        line-height: 29px;
+        font-weight: 500;
+    }
+    &__h3 {
+        font-size: 24px;
+        line-height: 20px;
+    }
+    &__h4 {
+        font-size: 18px;
+        line-height: 20px;
+    }
+    &__h5 {
+        font-size: 14px;
+    }
+    &__h6 {
+        font-size: 12px;
+    }
+
+    &_strong {
+        font-weight: 500;
+    }
+    &_bold {
+        font-weight: 700;
+    }
+    &_regular {
+        font-weight: 400;
+    }
+}
+
+.scl-typography-link {
+    font-family: $font-family-sans;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.42px;
+    color: $VIOLET_DARK;
+
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
     }
 
     &_strong {

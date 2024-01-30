@@ -20,14 +20,10 @@ export default defineConfig({
             external: ['react', 'react/jsx-runtime'],
             input: Object.fromEntries(
                 glob.sync('lib/**/*.{ts,tsx}').map(file => [
-                    // The name of the entry point
-                    // lib/nested/foo.ts becomes nested/foo
                     relative(
                     'lib',
                     file.slice(0, file.length - extname(file).length)
                     ),
-                    // The absolute path to the entry file
-                    // lib/nested/foo.ts becomes /project/lib/nested/foo.ts
                     fileURLToPath(new URL(file, import.meta.url))
                 ])
             ),
@@ -47,4 +43,10 @@ export default defineConfig({
         environment: 'jsdom',
         setupFiles: ['./src/tests/setup.ts'],
     },
+    resolve: {
+        alias: {
+            components: "/lib/components",
+            stories: "/src/stories"
+        }
+    }
 })

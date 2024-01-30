@@ -1,38 +1,19 @@
-import type { CSSProperties } from 'react';
-import cn from 'classnames'
+import type {
+    SCL_TypogrphyLinkProps,
+    SCL_TypogrphyTextProps,
+    SCL_TypogrphyTitleProps,
+} from './types'
+import { Text } from './text/Text'
+import { Title } from './title/Title'
+import { Link } from './link/Link'
 import './style.scss'
-
-interface SCL_TypogrphyTextProps {
-    type?: 'default' | 'secondary';
-    children?: string;
-    strong?: boolean;
-    bold?: boolean;
-    className?: string;
-    style?: CSSProperties
-}
 
 export const Typography: {
     Text: React.FC<SCL_TypogrphyTextProps>
+    Title: React.FC<SCL_TypogrphyTitleProps>
+    Link: React.FC<SCL_TypogrphyLinkProps>
 } = {
-    Text: ({ type = 'default', children = 'Text', strong, bold, className, style }) => {
-        const fontWeightClasses = {
-            'scl-typograpgy-text_strong': strong,
-            'scl-typograpgy-text_bold': bold,
-        }
-
-        switch (type) {
-            case 'secondary':
-                return (
-                    <span className={cn('scl-typography-text__secondary', fontWeightClasses, className)} style={style}>
-                        {children}
-                    </span>
-                )
-            case 'default':
-                return (
-                    <span className={cn('scl-typography-text', fontWeightClasses, className)} style={style}>
-                        {children}
-                    </span>
-                )
-        }
-    }
+    Text: Text,
+    Title: Title,
+    Link: Link,
 }
