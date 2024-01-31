@@ -24,6 +24,8 @@
     "paths": {
       "components/*": ["lib/components/*"],
       "stories/*": ["src/stories/*"],
+      "assets/*": ["src/assets/*"],
+      "styles/*": ["styles/*"],
     }
   },
   "include": ["src", "lib"],

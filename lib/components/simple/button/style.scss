@@ -1,0 +1,62 @@
+@import 'styles/_variables.scss';
+@import 'styles/mixin.scss';
+
+.scl-button {
+    @include display-flex(center, center);
+    width: 100%;
+    border-radius: 50px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease-in;
+    font-style: normal;
+    font-weight: 400;
+    cursor: pointer;
+
+    &__type-primary {
+        background-color: $GREEN;
+        color: $BLACK;
+    }
+    &__type-secondary {
+        background-color: $WHITE;
+        border-color: $GRAY;
+        color: $GRAY_DARK;
+    }
+
+    &__size-sm {
+        padding: 12px;
+        letter-spacing: 0.42px;
+    }
+    &__size-md {
+        padding: 14px;
+    }
+    &__size-lg {
+        padding: 16px;
+    }
+
+    &__text-sm {
+        font-size: 14px;
+    }
+    &__text-md {
+        font-size: 16px;
+    }
+    &__text-lg {
+        font-size: 18px;
+    }
+
+    &__shape-normal {
+        border-radius: 12px;
+    }
+    &__shape-circle {
+        width: min-content;
+        border-radius: 100%;
+    }
+    &__shape-circle-primary {
+        background-color: $GREEN;
+    }
+    &__shape-circle-secondary {
+        background-color: $GRAY_LIGHT;
+    }
+
+    &__icon {
+        @include display-flex(center, space-between)
+    }
+}

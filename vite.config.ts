@@ -46,7 +46,9 @@ export default defineConfig({
     resolve: {
         alias: {
             components: "/lib/components",
-            stories: "/src/stories"
+            stories: "/src/stories",
+            assets: "/src/assets",
+            styles: "/styles",
         }
     }
 })
