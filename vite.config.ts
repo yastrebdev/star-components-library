@@ -8,6 +8,8 @@ import dts from 'vite-plugin-dts'
 import react from '@vitejs/plugin-react-swc'
 import svgr from 'vite-plugin-svgr'
 
+const isTestFile = (file: string) => file.includes('.test.tsx');
+
 export default defineConfig({
     plugins: [
         react(),
@@ -21,7 +23,9 @@ export default defineConfig({
         rollupOptions: {
             external: ['react', 'react/jsx-runtime'],
             input: Object.fromEntries(
-                glob.sync('lib/**/*.{ts,tsx}').map(file => [
+                glob.sync('lib/**/*.{ts,tsx}')
+                    .filter(file => !isTestFile(file))
+                    .map(file => [
                     relative(
                     'lib',
                     file.slice(0, file.length - extname(file).length)
