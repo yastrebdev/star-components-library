@@ -11,7 +11,9 @@ import svgr from 'vite-plugin-svgr'
 export default defineConfig({
     plugins: [
         react(),
-        svgr(),
+        svgr({
+            include: "**/*.svg?react",
+        }),
         libInjectCss(),
         dts({ include: ['lib'] })
     ],
@@ -50,5 +52,5 @@ export default defineConfig({
             assets: "/src/assets",
             styles: "/styles",
         }
-    }
+    },
 })
