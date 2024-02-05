@@ -1,6 +1,6 @@
 import type { SCL_TagProps } from './type'
 import { useState } from 'react'
-import { Icon } from '../icons'
+import { Icon } from '../../primitive/icons/Icon'
 import cn from 'classnames'
 import './style.scss'
 
