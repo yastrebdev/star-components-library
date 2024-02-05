@@ -1,0 +1,16 @@
+@import 'styles/mixin.scss';
+@import 'styles/_variables.scss';
+
+.scl-tag {
+    @include display-flex(center, center);
+    gap: 6px;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: $GRAY_LIGHT;
+
+    &__text {
+        font-family: $font-family-sans;
+        font-size: 18px;
+        line-height: 20px;
+    }
+}

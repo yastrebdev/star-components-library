@@ -1,3 +1,6 @@
+import { DotsThree } from '@phosphor-icons/react'
+import { User } from '@phosphor-icons/react'
+import { X } from '@phosphor-icons/react'
 import ArrowVertical from 'assets/icons/arrow-separate-vertical.svg?react';
 import ArrowUpRight from 'assets/icons/arrow-up-right.svg?react';
 import Brain from 'assets/icons/brain.svg?react';
@@ -8,7 +11,7 @@ import DownloadDown from 'assets/icons/download-1.svg?react';
 import EditPencil from 'assets/icons/edit-pencil.svg?react';
 import FloppyDisk from 'assets/icons/floppy-disk.svg?react';
 import HalfMoon from 'assets/icons/half-moon.svg?react';
-import MoreHoriz from 'assets/icons/more-horiz.svg?react';
+// import MoreHoriz from 'assets/icons/more-horiz.svg?react';
 import NavArrowLeft from 'assets/icons/nav-arrow-down.svg?react';
 import NavArrowDown from 'assets/icons/nav-arrow-down-1.svg?react';
 import OpenSelectHand from 'assets/icons/open-select-hand-gesture.svg?react';
@@ -22,9 +25,13 @@ import SendMail from 'assets/icons/send-mail.svg?react';
 import Settings from 'assets/icons/settings.svg?react';
 import ShareAndroid from 'assets/icons/share-android.svg?react';
 import Trash from 'assets/icons/trash.svg?react';
-import Xmark from 'assets/icons/xmark.svg?react';
+// import Xmark from 'assets/icons/xmark.svg?react';
 
 export const icons = {
+    DotsThree,
+    User,
+    X,
+
     ArrowVertical,
     ArrowUpRight,
     Brain,
@@ -35,7 +42,6 @@ export const icons = {
     EditPencil,
     FloppyDisk,
     HalfMoon,
-    MoreHoriz,
     NavArrowLeft,
     NavArrowDown,
     OpenSelectHand,
@@ -49,7 +55,7 @@ export const icons = {
     Settings,
     ShareAndroid,
     Trash,
-    Xmark,
+    // Xmark,
 };
 
 export type IconName = keyof typeof icons;

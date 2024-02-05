@@ -5,8 +5,9 @@ export interface SCL_IconProps {
     name?: IconName
     className?: string
     style?: CSSProperties
-    stroke?: string
+    color?: string
+    size?: number
     onClick?: (
-        event: MouseEvent<HTMLButtonElement> | MouseEvent<HTMLElement>
+        event: MouseEvent<SVGSVGElement>
     ) => void
 }

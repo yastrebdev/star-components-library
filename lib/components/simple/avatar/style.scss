@@ -1,0 +1,37 @@
+@import 'styles/mixin.scss';
+@import 'styles/_variables.scss';
+
+.scl-avatar {
+    border-radius: 12px;
+    overflow: hidden;
+    &__size-sm {
+        width: 50px;
+        height: 50px;
+    }
+    &__size-md {
+        width: 54px;
+        height: 54px;
+    }
+    &__size-lg {
+        width: 58px;
+        height: 58px;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__circle {
+        border-radius: 100%;
+    }
+
+    &__onclick {
+        cursor: pointer;
+    }
+
+    &__icon {
+        @include display-flex(center, center);
+        background-color: $GRAY_LIGHT;
+        border: 1px solid $GRAY;
+    }
+}

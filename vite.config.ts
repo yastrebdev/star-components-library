@@ -38,7 +38,7 @@ export default defineConfig({
                 entryFileNames: '[name].js',
             }
         },
-        copyPublicDir: false,
+        // copyPublicDir: false,
         lib: {
             entry: resolve(__dirname, 'lib/main.ts'),
             formats: ['es']

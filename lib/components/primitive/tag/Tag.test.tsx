@@ -1,14 +1,14 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react' // (or /dom, /vue, ...)
 import { describe, it } from 'vitest'
-import { Icon } from './Icon'
+import { Tag } from './Tag'
 
 describe('Icon', () => {
     it('Render components', () => {
-        render(<Icon />)
-        screen.getByTestId('icon-element')
+        render(<Tag></Tag>)
+        screen.getByText('Im tag')
     })
     it('on click', () => {
-        render(<Icon onClick={() => console.log('I click')} />)
+        render(<Tag closeIcon preventDefault onClose={() => console.log('ahahahahahah')}>Hello</Tag>)
     })
 })
