@@ -47,4 +47,9 @@ export default defineConfig({
         environment: 'jsdom',
         setupFiles: ['./src/tests/setup.ts'],
     },
+    resolve: {
+        alias: {
+            components: '/lib/components'
+        }
+    }
 })
