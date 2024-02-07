@@ -2,7 +2,7 @@ import type { Meta } from '@storybook/react'
 import { Tag } from 'components/smart/tag'
 
 const meta: Meta<typeof Tag> = {
-    title: 'Primitive/Tag',
+    title: 'Smart/Tag',
     component: Tag,
     tags: ['autodocs'],
 }

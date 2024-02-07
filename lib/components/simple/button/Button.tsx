@@ -10,7 +10,7 @@ export const Button: React.FC<SCL_ButtonProps> = ({
     type = 'primary',
     size = 'lg',
     children = `I'm button`,
-    icon = 'DotsThree',
+    icon,
     shape,
     onClick,
 }) => {

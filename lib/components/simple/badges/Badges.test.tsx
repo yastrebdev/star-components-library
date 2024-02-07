@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react' // (or /dom, /vue, ...)
 import { describe, it } from 'vitest'
-import { Button } from './Button'
+import { Badges } from './Badges'
 
-describe('Button', () => {
+describe('Badges', () => {
     it('Render components', () => {
-        render(<Button>I button</Button>)
-        screen.getByText('I button')
+        render(<Badges><div>test</div></Badges>)
+        screen.getByText('test')
     })
 })

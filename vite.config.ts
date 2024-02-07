@@ -26,23 +26,22 @@ export default defineConfig({
                 glob.sync('lib/**/*.{ts,tsx}')
                     .filter(file => !isTestFile(file))
                     .map(file => [
-                    relative(
-                    'lib',
-                    file.slice(0, file.length - extname(file).length)
-                    ),
-                    fileURLToPath(new URL(file, import.meta.url))
-                ])
+                        relative(
+                        'lib',
+                        file.slice(0, file.length - extname(file).length)
+                        ),
+                        fileURLToPath(new URL(file, import.meta.url))
+                    ])
             ),
             output: {
                 assetFileNames: 'assets/[name][extname]',
                 entryFileNames: '[name].js',
             }
         },
-        // copyPublicDir: false,
         lib: {
             entry: resolve(__dirname, 'lib/main.ts'),
             formats: ['es']
-        }
+        },
     },
     test: {
         globals: true,

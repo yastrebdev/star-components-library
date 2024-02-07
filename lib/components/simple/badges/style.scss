@@ -1,0 +1,31 @@
+@import 'styles/_variables.scss';
+
+.scl-badges-wrapper {
+    position: relative;
+}
+
+.scl-badges {
+    width: 24px;
+    height: 24px;
+    @include display-flex(center, center);
+    border-radius: 100%;
+    background-color: $VIOLET;
+    position: absolute;
+
+    &__tr {
+        right: -8px;
+        top: -8px;
+    }
+    &__tl {
+        left: -8px;
+        top: -8px;
+    }
+    &__br {
+        right: -8px;
+        bottom: -8px;
+    }
+    &__bl {
+        left: -8px;
+        bottom: -8px;
+    }
+}

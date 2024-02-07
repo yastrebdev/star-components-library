@@ -1,0 +1,62 @@
+@import 'styles/_variables.scss';
+
+.scl-switch-wrapper {
+    position: relative;
+}
+
+.scl-switch {
+    padding: 3px;
+    border-radius: 40px;
+    outline: 1px solid $BLACK;
+    width: 78px;
+    height: 40px;
+    cursor: pointer;
+    @include display-flex(center, space-between);
+
+    &__hendel {
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 34px;
+        height: 34px;
+        border-radius: 50px;
+        background-color: $VIOLET;
+        pointer-events: none;
+        @include display-flex(center, center);
+        transition: all 0.3s ease-in-out;
+        &_on {
+            background-color: $VIOLET_DARK;
+            left: 41px;
+            transform: rotate(180deg);
+        }
+        &_stretch-on {
+            width: 40px;
+        }
+        &_stretch-off {
+            left: 35px;
+        }
+
+        &__circles {
+            display: flex;
+            gap: 4px;
+            transition: all 0.2s ease-in-out;
+            
+            div {
+                width: 4px;
+                height: 4px;
+                border-radius: 100%;
+                background-color: $WHITE;
+            }
+
+            &_closer {
+                gap: 8px;
+            }
+        }
+    }
+
+    &__icon {
+        @include display-flex(center, center);
+        width: 34px;
+        height: 34px;
+    }
+}

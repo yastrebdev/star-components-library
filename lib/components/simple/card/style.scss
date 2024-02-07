@@ -1,0 +1,31 @@
+@import 'styles/_variables.scss';
+
+.scl-card {
+    font-family: $font-family-sans;
+    padding: 16px;
+    border: 1px solid $GRAY;
+    border-radius: 16px;
+    @include display-flex(center, space-between);
+    min-width: 200px;
+
+    &__title {
+        @include text;
+        max-width: 200px;
+        color: $BLACK;
+    }
+    &__subtitle {
+        @include subtitle;
+        color: $GRAY_DARK;
+        max-width: 120px;
+    }
+
+    &__left {
+        @include display-flex;
+        flex-direction: column;
+        margin-right: 16px;
+    }
+
+    &__icon {
+        cursor: pointer;
+    }
+}

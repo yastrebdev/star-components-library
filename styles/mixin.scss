@@ -3,3 +3,16 @@
     align-items: $ai;
     justify-content: $jc;
 }
+
+@mixin text {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+    letter-spacing: 3%;
+}
+
+@mixin subtitle {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 4%;
+}
