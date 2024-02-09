@@ -4,7 +4,15 @@
     justify-content: $jc;
 }
 
+@mixin h4 {
+    font-family: $font-family-sans;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
 @mixin text {
+    font-family: $font-family-sans;
     font-size: 16px;
     line-height: 22px;
     font-weight: 400;
@@ -12,6 +20,7 @@
 }
 
 @mixin subtitle {
+    font-family: $font-family-sans;
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 4%;
