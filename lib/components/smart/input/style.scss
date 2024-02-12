@@ -1,0 +1,52 @@
+@import 'styles/_variables.scss';
+
+.scl-input {
+    --paddingLeft: 18px;
+    position: relative;
+    width: 100%;
+    &__field {
+        width: 100%;
+        padding: 16px var(--paddingLeft);
+        border-radius: 50px;
+        border: 1px solid $GRAY_DARK;
+        @include input-text;
+        color: $BLACK;
+        &::placeholder {
+            color: $GRAY_DARK;
+        }
+        &:focus {
+            outline: none;
+        }
+        &_icon {
+            padding-left: 50px;
+        }
+        &_emptyField {
+            background-color: rgba($color: $ORANGE, $alpha: .05);
+            border-color: $ORANGE;
+        }
+    }
+    &__icon {
+        position: absolute;
+        left: var(--paddingLeft);
+        top: 50%;
+        transform: translateY(-50%);
+        &_password {
+            left: auto;
+            right: 18px;
+            cursor: pointer;
+        }
+    }
+    &__button {
+        position: absolute;
+        right: 6px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__empty-error {
+        position: absolute;
+        @include caption;
+        bottom: -16px;
+        color: $DANGER;
+    }
+}

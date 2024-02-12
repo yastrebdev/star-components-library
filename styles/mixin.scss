@@ -19,9 +19,23 @@
     letter-spacing: 3%;
 }
 
+@mixin input-text {
+    font-family: $font-family-sans;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
 @mixin subtitle {
     font-family: $font-family-sans;
     font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 4%;
+}
+
+@mixin caption {
+    font-family: $font-family-sans;
+    font-size: 12px;
     font-weight: 400;
     letter-spacing: 4%;
 }

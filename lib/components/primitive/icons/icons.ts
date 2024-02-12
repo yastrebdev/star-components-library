@@ -5,11 +5,14 @@ import { Check } from '@phosphor-icons/react'
 import { Moon } from '@phosphor-icons/react'
 import { Sun } from '@phosphor-icons/react'
 import { CaretDown } from '@phosphor-icons/react'
+import { ChatCircle } from '@phosphor-icons/react';
+import { PaperPlaneRight } from '@phosphor-icons/react';
+import { Eye } from '@phosphor-icons/react';
+import { EyeSlash } from '@phosphor-icons/react';
 
 import ArrowVertical from 'assets/icons/arrow-separate-vertical.svg?react';
 import ArrowUpRight from 'assets/icons/arrow-up-right.svg?react';
 import Brain from 'assets/icons/brain.svg?react';
-import ChatLines from 'assets/icons/chat-lines.svg?react';
 import Copy from 'assets/icons/copy.svg?react';
 import DownloadUp from 'assets/icons/download.svg?react';
 import DownloadDown from 'assets/icons/download-1.svg?react';
@@ -36,11 +39,14 @@ export const icons = {
     Moon,
     Sun,
     CaretDown,
+    ChatCircle,
+    PaperPlaneRight,
+    Eye,
+    EyeSlash,
 
     ArrowVertical,
     ArrowUpRight,
     Brain,
-    ChatLines,
     Copy,
     DownloadUp,
     DownloadDown,

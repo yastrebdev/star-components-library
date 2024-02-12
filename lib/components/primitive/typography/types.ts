@@ -24,11 +24,11 @@ export interface SCL_TypogrphyTitleProps {
 }
 
 export interface SCL_TypogrphyLinkProps {
+    children?: string
     href?: string
     target?: LinkTargetTypes
     className?: string
     style?: CSSProperties
-    children?: string
     strong?: boolean
     bold?: boolean
 }
