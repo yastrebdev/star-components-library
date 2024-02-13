@@ -1,0 +1,38 @@
+import { Meta, Canvas, Source, Title, Controls } from '@storybook/blocks'
+import * as TitleStories from './Title.stories'
+
+<Meta of={TitleStories} />
+
+<Title children='Typography.Title'/>
+<Canvas of={TitleStories.Default} sourceState='none'/>
+<Source code={
+`import { Typography } from 'star-components-library';
+
+const { Title } = Typography
+
+const MyComponents = () => <Title />
+`
+} of={TitleStories.Default} language="tsx"/>
+<Controls />
+
+<Title children='Typography.Title levels'/>
+<Canvas of={TitleStories.Levels} sourceState='none'/>
+<Source code={
+`import { Typography } from 'star-components-library';
+
+const { Title } = Typography
+
+const MyComponents = () => {
+    return (
+        <>
+            <Title>h1. Star Components Library</Title> // the same as <Title level={1} />
+            <Title level={2}>h2. Star Components Library</Title>
+            <Title level={3}>h3. Star Components Library</Title>
+            <Title level={4}>h4. Star Components Library</Title>
+            <Title level={5}>h5. Star Components Library</Title>
+            <Title level={6}>h6. Star Components Library</Title>
+        </>
+    )
+}
+`
+} of={TitleStories.Levels} language="tsx"/>

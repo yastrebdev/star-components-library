@@ -3,7 +3,7 @@ import { SCL_TypogrphyTextProps } from "../types"
 
 export const Text: React.FC<SCL_TypogrphyTextProps> = ({
     type = 'default',
-    children = 'Text',
+    children,
     strong,
     bold,
     className,
@@ -16,6 +16,7 @@ export const Text: React.FC<SCL_TypogrphyTextProps> = ({
 
     switch (type) {
         case 'secondary':
+            children = 'secondary'
             return (
                 <span
                     className={cn(
@@ -28,6 +29,7 @@ export const Text: React.FC<SCL_TypogrphyTextProps> = ({
                 </span>
             )
         case 'success':
+            children = 'success'
             return (
                 <span
                     className={cn(
@@ -40,6 +42,7 @@ export const Text: React.FC<SCL_TypogrphyTextProps> = ({
                 </span>
             )
         case 'warning':
+            children = 'warning'
             return (
                 <span
                     className={cn(
@@ -52,6 +55,7 @@ export const Text: React.FC<SCL_TypogrphyTextProps> = ({
                 </span>
             )
         case 'danger':
+            children = 'danger'
             return (
                 <span
                     className={cn(
@@ -64,6 +68,7 @@ export const Text: React.FC<SCL_TypogrphyTextProps> = ({
                 </span>
             )
         case 'default':
+            {children = 'default'}
             return (
                 <span
                     className={cn(

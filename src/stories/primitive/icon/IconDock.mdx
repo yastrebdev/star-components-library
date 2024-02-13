@@ -1,0 +1,25 @@
+import { Meta, Canvas, Source, Title, Controls, Description } from '@storybook/blocks'
+import * as IconStories from './Icon.stories'
+
+<Meta of={IconStories} />
+
+<Title children='Icon'/>
+<Canvas of={IconStories.Default} sourceState='none'/>
+<Source code={
+`import { Icon } from 'star-components-library';
+
+const MyComponents = () => <Icon />
+`
+} of={IconStories.Default} language="tsx"/>
+<Controls />
+
+<Title children='All icons' />
+All icons are supplied with the [phosphor](https://phosphoricons.com/) library
+
+<Canvas of={IconStories.Icons} sourceState='none'/>
+<Source code={
+`import { Icon } from 'star-components-library';
+
+const MyComponents = () => <Icon name='IconName' />
+`
+} of={IconStories.Icons} language="tsx"/>

@@ -7,13 +7,19 @@ const { Text } = Typography
 const meta: Meta<typeof Text> = {
     title: 'Primitive/Typography/Text',
     component: Text,
-    tags: ['autodocs'],
 }
 
 export default meta
 type Story = StoryObj<typeof Text>
 
 export const Default: Story = {
+    args: {
+        children: 'Text',
+        className: '',
+        style: {},
+        strong: false,
+        bold: false,
+    },
     argTypes: {
         type: {
             defaultValue: 'default',

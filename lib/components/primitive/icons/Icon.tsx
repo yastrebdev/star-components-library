@@ -6,9 +6,10 @@ import './style.scss'
 export const Icon = ({
     name = 'User',
     color = 'black',
+    weight,
     className,
     style,
-    size,
+    size = 24,
     onClick,
 }: SCL_IconProps) => {
     const SvgIcon = getIcon(name)
@@ -16,12 +17,14 @@ export const Icon = ({
         <>
             <SvgIcon
                 onClick={onClick}
-                data-testid="icon-element"
                 className={cn('scl-icon', {
                     ['scl-icon__onclick']: onClick,
                 }, className)}
                 color={color}
+                weight={weight}
                 style={{ width: size, height: size, ...style }}
+                
+                data-testid="icon-element"
             />
         </>
     )
