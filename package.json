@@ -1,6 +1,6 @@
 {
     "name": "star-components-library",
-    "version": "0.0.1",
+    "version": "0.0.7",
     "type": "module",
     "main": "dist/main.js",
     "types": "dist/main.d.ts",
@@ -9,7 +9,7 @@
     ],
     "scripts": {
         "dev": "vite",
-        "build": "tsc --p ./tsconfig-build.json && vite build",
+        "build": "tsc && vite build",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview",
         "storybook": "storybook dev -p 6006",
@@ -17,6 +17,7 @@
         "test": "vitest"
     },
     "dependencies": {
+        "@phosphor-icons/react": "2.0.15",
         "classnames": "^2.5.1",
         "minireset.css": "^0.0.7",
         "react": "^18.2.0",
@@ -28,10 +29,11 @@
         "@storybook/addon-links": "^7.6.10",
         "@storybook/addon-onboarding": "1.0.10",
         "@storybook/blocks": "^7.6.10",
+        "@storybook/builder-vite": "^7.6.12",
         "@storybook/react": "^7.6.10",
         "@storybook/react-vite": "^7.6.10",
         "@storybook/test": "^7.6.10",
-        "@testing-library/jest-dom": "^6.2.1",
+        "@testing-library/jest-dom": "^6.4.2",
         "@testing-library/react": "^14.1.2",
         "@types/babel__core": "^7.20.5",
         "@types/react": "^18.2.43",
@@ -55,7 +57,7 @@
         "vitest": "^1.2.1"
     },
     "sideEffects": [
-        "**/*.css"
+        "**/*.scss"
     ],
     "packageManager": "yarn@4.0.2"
 }

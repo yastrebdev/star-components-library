@@ -1,34 +1,32 @@
-import type { SCL_IconProps } from './tyoe'
+import type { SCL_IconProps } from './type'
 import { getIcon } from './icons'
 import cn from 'classnames'
 import './style.scss'
 
 export const Icon = ({
-    name = 'ArrowVertical',
-    stroke = 'black',
+    name = 'User',
+    color = 'black',
+    testid,
+    weight,
     className,
     style,
+    size = 24,
     onClick,
 }: SCL_IconProps) => {
     const SvgIcon = getIcon(name)
     return (
         <>
-            {onClick ? (
-                <button data-testid="icon-button-element" type="button" className="button" onClick={onClick}>
-                    <SvgIcon
-                        style={style}
-                        className={cn('icon', className)}
-                        stroke={stroke}
-                    />
-                </button>
-            ) : (
-                <SvgIcon
-                    data-testid="icon-element"
-                    className={cn('icon', className)}
-                    style={style}
-                    stroke={stroke}
-                />
-            )}
+            <SvgIcon
+                onClick={onClick}
+                className={cn('scl-icon', {
+                    ['scl-icon__onclick']: onClick,
+                }, className)}
+                color={color}
+                weight={weight}
+                style={{ width: size, height: size, ...style }}
+                
+                data-testid={testid}
+            />
         </>
     )
 }

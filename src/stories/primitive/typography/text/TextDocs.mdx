@@ -1,0 +1,37 @@
+import { Meta, Canvas, Source, Title, Controls } from '@storybook/blocks'
+import * as TextStories from './Text.stories'
+
+<Meta of={TextStories} />
+
+<Title children='Typography.Text'/>
+<Canvas of={TextStories.Default} sourceState='none'/>
+<Source code={
+`import { Typography } from 'star-components-library';
+
+const { Text } = Typography
+
+const MyComponents = () => <Text />
+`
+} of={TextStories.Default} language="tsx"/>
+<Controls />
+
+<Title children='Typography.Text types'/>
+<Canvas of={TextStories.Types} sourceState='none'/>
+<Source code={
+`import { Typography } from 'star-components-library';
+
+const { Text } = Typography
+
+const MyComponents = () => {
+    return (
+        <>
+            <Text>default</Text> // the same as <Text type='default' />
+            <Text type='secondary>secondary</Text>
+            <Text type='success>success</Text>
+            <Text type='warning>warning</Text>
+            <Text type='danger>danger</Text>
+        </>
+    )
+}
+`
+} of={TextStories.Types} language="tsx"/>

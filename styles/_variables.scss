@@ -1,3 +1,5 @@
+@import './mixin.scss';
+
 // colors
 $BLACK: #000000;
 $GRAY_DARK: #a0a0a0;
@@ -5,8 +7,10 @@ $GRAY: #e8e8e8;
 $GRAY_LIGHT: #f9f9f9;
 $WHITE: #ffffff;
 $GREEN: #ccfd13;
+$GREEN_DARK: #a9ef2c;
 $VIOLET: #b3bbfd;
 $VIOLET_DARK: #8843ff;
+$ORANGE: #e55733;
 
 $SUCCESS: #52c41a;
 $WARNING: #ff7a00;

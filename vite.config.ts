@@ -8,10 +8,14 @@ import dts from 'vite-plugin-dts'
 import react from '@vitejs/plugin-react-swc'
 import svgr from 'vite-plugin-svgr'
 
+const isTestFile = (file: string) => file.includes('.test.tsx');
+
 export default defineConfig({
     plugins: [
         react(),
-        svgr(),
+        svgr({
+            include: "**/*.svg?react",
+        }),
         libInjectCss(),
         dts({ include: ['lib'] })
     ],
@@ -19,24 +23,25 @@ export default defineConfig({
         rollupOptions: {
             external: ['react', 'react/jsx-runtime'],
             input: Object.fromEntries(
-                glob.sync('lib/**/*.{ts,tsx}').map(file => [
-                    relative(
-                    'lib',
-                    file.slice(0, file.length - extname(file).length)
-                    ),
-                    fileURLToPath(new URL(file, import.meta.url))
-                ])
+                glob.sync('lib/**/*.{ts,tsx}')
+                    .filter(file => !isTestFile(file))
+                    .map(file => [
+                        relative(
+                        'lib',
+                        file.slice(0, file.length - extname(file).length)
+                        ),
+                        fileURLToPath(new URL(file, import.meta.url))
+                    ])
             ),
             output: {
                 assetFileNames: 'assets/[name][extname]',
                 entryFileNames: '[name].js',
             }
         },
-        copyPublicDir: false,
         lib: {
             entry: resolve(__dirname, 'lib/main.ts'),
             formats: ['es']
-        }
+        },
     },
     test: {
         globals: true,
@@ -50,5 +55,5 @@ export default defineConfig({
             assets: "/src/assets",
             styles: "/styles",
         }
-    }
+    },
 })

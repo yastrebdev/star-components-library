@@ -10,7 +10,7 @@ export const Button: React.FC<SCL_ButtonProps> = ({
     type = 'primary',
     size = 'lg',
     children = `I'm button`,
-    icon = 'MoreHoriz',
+    icon,
     shape,
     onClick,
 }) => {
@@ -39,7 +39,7 @@ export const Button: React.FC<SCL_ButtonProps> = ({
             {(icon || isCircle) && (
                 <Icon
                     name={icon}
-                    style={{ width: iconSize, height: iconSize}}
+                    style={{width: iconSize, height: iconSize}}
                 />
             )}
         </button>

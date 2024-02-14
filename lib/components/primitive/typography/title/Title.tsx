@@ -1,4 +1,5 @@
 import type { SCL_TypogrphyTitleProps } from '../types'
+import React from 'react';
 import cn from 'classnames'
 
 export const Title: React.FC<SCL_TypogrphyTitleProps> = ({
@@ -8,7 +9,8 @@ export const Title: React.FC<SCL_TypogrphyTitleProps> = ({
     style,
     strong,
     bold,
-    regular
+    regular,
+    onClick
 }) => {
     const titleWeightClasses = {
         'scl-typography-title_strong': strong,
@@ -16,78 +18,34 @@ export const Title: React.FC<SCL_TypogrphyTitleProps> = ({
         'scl-typography-title_regular': regular,
     }
 
+    const titleElement = (level = 1) => {
+        const element = React.createElement(
+            `h${level}`,
+            {className: cn(
+                'scl-typography-title',
+                `scl-typography-title__h${level}`,
+                titleWeightClasses,
+                className),
+            style: style,
+            onClick: onClick
+            },
+            children
+        )
+        return element
+    }
+
     switch (level) {
         case 1:
-            return (
-                <h1
-                    className={cn(
-                        'scl-typography-title scl-typography-title__h1',
-                        titleWeightClasses,
-                        className
-                    )}
-                    style={style}>
-                    {children}
-                </h1>
-            )
+            return titleElement()
         case 2:
-            return (
-                <h2
-                    className={cn(
-                        'scl-typography-title scl-typography-title__h2',
-                        titleWeightClasses,
-                        className
-                    )}
-                    style={style}>
-                    {children}
-                </h2>
-            )
+            return titleElement(2)
         case 3:
-            return (
-                <h3
-                    className={cn(
-                        'scl-typography-title scl-typography-title__h3',
-                        titleWeightClasses,
-                        className
-                    )}
-                    style={style}>
-                    {children}
-                </h3>
-            )
+            return titleElement(3)
         case 4:
-            return (
-                <h4
-                    className={cn(
-                        'scl-typography-title scl-typography-title__h4',
-                        titleWeightClasses,
-                        className
-                    )}
-                    style={style}>
-                    {children}
-                </h4>
-            )
+            return titleElement(4)
         case 5:
-            return (
-                <h5
-                    className={cn(
-                        'scl-typography-title scl-typography-title__h5',
-                        titleWeightClasses,
-                        className
-                    )}
-                    style={style}>
-                    {children}
-                </h5>
-            )
+            return titleElement(5)
         case 6:
-            return (
-                <h6
-                    className={cn(
-                        'scl-typography-title scl-typography-title__h6',
-                        titleWeightClasses,
-                        className
-                    )}
-                    style={style}>
-                    {children}
-                </h6>
-            )
+            return titleElement(6)
     }
 }

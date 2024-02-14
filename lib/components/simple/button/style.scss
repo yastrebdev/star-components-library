@@ -1,5 +1,4 @@
 @import 'styles/_variables.scss';
-@import 'styles/mixin.scss';
 
 .scl-button {
     @include display-flex(center, center);
@@ -10,10 +9,14 @@
     font-style: normal;
     font-weight: 400;
     cursor: pointer;
+    transition: all .2s ease-in-out;
 
     &__type-primary {
         background-color: $GREEN;
         color: $BLACK;
+        &:hover {
+            background-color: $GREEN_DARK;
+        }
     }
     &__type-secondary {
         background-color: $WHITE;

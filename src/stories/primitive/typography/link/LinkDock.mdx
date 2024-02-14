@@ -1,0 +1,16 @@
+import { Meta, Canvas, Source, Title, Controls, Description } from '@storybook/blocks'
+import * as LinkStories from './Link.stories'
+
+<Meta of={LinkStories} />
+
+<Title children='Typography.Link'/>
+<Canvas of={LinkStories.Default} sourceState='none'/>
+<Source code={
+`import { Typography } from 'star-components-library';
+
+const { Link } = Typography
+
+const MyComponents = () => <Link />
+`
+} of={LinkStories.Default} language="tsx"/>
+<Controls />
