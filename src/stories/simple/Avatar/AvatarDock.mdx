@@ -1,0 +1,63 @@
+import { Meta, Canvas, Source, Title, Controls, Description } from '@storybook/blocks'
+import * as AvatarStories from './Avatar.stories'
+
+<Meta of={AvatarStories} />
+
+<Title children='Avatar'/>
+<Canvas of={AvatarStories.Default} sourceState='none'/>
+<Source code={
+`import { Avatar } from 'star-components-library';
+
+const MyComponents = () => <Avatar />
+`
+} of={AvatarStories.Default} language="tsx"/>
+<Controls />
+
+<Title children='Avatar sizes'/>
+<Canvas of={AvatarStories.Sizes} sourceState='none'/>
+<Source code={
+`import { Avatar } from 'star-components-library';
+
+const MyComponents = () => {
+    return (
+        <>
+            <Avatar size='lg' />
+            <Avatar size='md' />
+            <Avatar size='sm' />
+        </>
+    )
+}
+`
+} of={AvatarStories.Sizes} language="tsx"/>
+
+<Title children='Avatar circle'/>
+<Canvas of={AvatarStories.Circle} sourceState='none'/>
+<Source code={
+`import { Avatar } from 'star-components-library';
+
+const MyComponents = () => {
+    return (
+        <>
+            <Avatar circle={false} />
+            <Avatar circle /> // same as cercle={true} or <Avatar />
+        </>
+    )
+}
+`
+} of={AvatarStories.Circle} language="tsx"/>
+
+<Title children='Avatar icon'/>
+<Canvas of={AvatarStories.Icon} sourceState='none'/>
+<Source code={
+`import { Avatar } from 'star-components-library';
+
+const MyComponents = () => {
+    return (
+        <>
+            <Avatar icon='Plus' />
+            <Avatar icon='User' />
+        </>
+    )
+}
+`
+} of={AvatarStories.Icon} language="tsx"/>

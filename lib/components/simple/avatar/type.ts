@@ -1,5 +1,5 @@
 import { IconName } from "components/primitive/icons/icons"
-import { MouseEvent } from "react"
+import { CSSProperties, MouseEvent } from "react"
 
 export type AvatarSize = 'sm' | 'md' | 'lg'
 
@@ -10,4 +10,5 @@ export interface SCL_AvatarProps {
     size?: AvatarSize
     onClick?: (event: MouseEvent<HTMLDivElement>) => void
     circle?: boolean
+    style?: CSSProperties
 }

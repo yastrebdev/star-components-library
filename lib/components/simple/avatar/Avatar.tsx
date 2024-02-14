@@ -1,4 +1,4 @@
-import { SCL_AvatarProps } from './type'
+import type { SCL_AvatarProps } from './type'
 import { Icon } from 'components/primitive/icons'
 import Ava from '../../../../public/avatar.png'
 import cn from 'classnames'
@@ -8,9 +8,10 @@ export const Avatar: React.FC<SCL_AvatarProps> = ({
     src = Ava,
     icon,
     size = 'lg',
-    onClick,
     circle = true,
-    className
+    className,
+    style,
+    onClick,
 }) => {
     return (
         <div
@@ -20,8 +21,9 @@ export const Avatar: React.FC<SCL_AvatarProps> = ({
                 ['scl-avatar__onclick']: onClick,
                 ['scl-avatar__icon']: icon,
             }, className)}
+            style={style}
             onClick={onClick}>
-            {icon ? <Icon name={icon}/> : <img src={src} />}
+            {icon ? <Icon testid='scl-test-avatar-icon' name={icon}/> : <img src={src} alt='avatar' />}
         </div>
     )
 }

@@ -6,6 +6,7 @@ import './style.scss'
 export const Icon = ({
     name = 'User',
     color = 'black',
+    testid,
     weight,
     className,
     style,
@@ -24,7 +25,7 @@ export const Icon = ({
                 weight={weight}
                 style={{ width: size, height: size, ...style }}
                 
-                data-testid="icon-element"
+                data-testid={testid}
             />
         </>
     )

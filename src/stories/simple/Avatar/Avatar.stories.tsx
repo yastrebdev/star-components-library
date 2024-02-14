@@ -1,20 +1,56 @@
-import type { Meta } from '@storybook/react'
+import Ava from '../../../../public/avatar.png'
+import type { Meta, StoryObj } from '@storybook/react'
 import { Avatar } from 'components/simple/avatar'
 import { options } from './constants'
 
 const meta: Meta<typeof Avatar> = {
     title: 'Simple/Avatar',
     component: Avatar,
-    tags: ['autodocs'],
+    decorators: [
+        (Story) => (
+            <div
+                style={{
+                    display: 'flex',
+                    flexDirection: 'row-reverse',
+                    alignItems: 'center',
+                    gap: '10px',
+                }}>
+                <Story />
+            </div>
+        ),
+    ],
 }
 
 export default meta
+type Story = StoryObj<typeof Avatar>
 
-export const Default = () => <Avatar></Avatar>
+export const Default: Story = {
+    args: {
+        src: Ava,
+        size: 'lg',
+        circle: true,
+        className: '',
+    }
+}
 
 export const Sizes = () =>
     options.sizes.map((size, i: number) => {
         return <Avatar size={size} key={i} />
     })
 
-export const Icon = () => <Avatar icon='User'></Avatar>
+export const Circle = () => {
+    return (
+        <>
+            <Avatar circle />
+            <Avatar circle={false} />
+        </>
+    )
+}
+export const Icon = () => {
+    return (
+        <>
+            <Avatar icon='Plus' />
+            <Avatar icon='User' />
+        </>
+    )
+}

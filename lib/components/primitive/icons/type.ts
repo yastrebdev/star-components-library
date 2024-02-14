@@ -5,6 +5,7 @@ import { IconWeight } from '@phosphor-icons/react'
 export interface SCL_IconProps {
     name?: IconName
     className?: string
+    testid?: string
     style?: CSSProperties
     color?: string
     weight?: IconWeight

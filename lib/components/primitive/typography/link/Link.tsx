@@ -8,7 +8,8 @@ export const Link: React.FC<SCL_TypogrphyLinkProps> = ({
     className,
     style,
     strong,
-    bold
+    bold,
+    onClick
 }) => {
     const fontWeightClasses = {
         'scl-typography-link_strong': strong,
@@ -17,6 +18,7 @@ export const Link: React.FC<SCL_TypogrphyLinkProps> = ({
 
     return (
         <a
+            onClick={onClick}
             href={href}
             target={target}
             className={cn('scl-typography-link', fontWeightClasses, className)}

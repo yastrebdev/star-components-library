@@ -1,4 +1,4 @@
-import { CSSProperties } from "react"
+import { CSSProperties, MouseEvent } from "react"
 
 export type TextTypes = 'default' | 'secondary' | 'success' | 'warning' | 'danger'
 export type TytleLevelTypes = 1 | 2 | 3 | 4 | 5 | 6
@@ -11,6 +11,9 @@ export interface SCL_TypogrphyTextProps {
     bold?: boolean
     className?: string
     style?: CSSProperties
+    onClick?: (
+        event: MouseEvent<HTMLSpanElement>
+    ) => void
 }
 
 export interface SCL_TypogrphyTitleProps {
@@ -21,6 +24,9 @@ export interface SCL_TypogrphyTitleProps {
     strong?: boolean
     bold?: boolean
     regular?: boolean
+    onClick?: (
+        event: MouseEvent<HTMLHeadElement>
+    ) => void
 }
 
 export interface SCL_TypogrphyLinkProps {
@@ -31,4 +37,7 @@ export interface SCL_TypogrphyLinkProps {
     style?: CSSProperties
     strong?: boolean
     bold?: boolean
+    onClick?: (
+        event: MouseEvent<HTMLElement>
+    ) => void
 }
