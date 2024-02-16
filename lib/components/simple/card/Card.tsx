@@ -1,9 +1,12 @@
 import type { SCL_CardProps } from './type'
 import { Icon } from 'components/primitive/icons'
+import { ClickableCard } from './clickable-card'
 import cn from 'classnames'
 import './style.scss'
 
-export const Card: React.FC<SCL_CardProps> = ({
+export const Card: React.FC<SCL_CardProps> & {
+    ClickableCard: typeof ClickableCard
+} = ({
     className,
     style,
     title = 'This is card',
@@ -26,3 +29,5 @@ export const Card: React.FC<SCL_CardProps> = ({
         </div>
     )
 }
+
+Card.ClickableCard = ClickableCard

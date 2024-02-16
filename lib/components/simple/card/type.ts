@@ -10,3 +10,7 @@ export interface SCL_CardProps {
     icon?: ReactElement
     onClick?: (event: MouseEvent<HTMLDivElement>) => void
 }
+
+export interface SCL_ClickableCardProps {
+    
+}
