@@ -1,0 +1,76 @@
+import { Meta, Canvas, Source, Title, Controls } from '@storybook/blocks'
+import * as ButtonStories from './Button.stories'
+
+<Meta of={ButtonStories} />
+
+<Title children='Button'/>
+<Canvas of={ButtonStories.Default} sourceState='none'/>
+<Source code={
+`import { Button } from 'star-components-library';
+
+const MyComponents = () => <Button />
+`
+} of={ButtonStories.Default} language="tsx"/>
+<Controls />
+
+<Title children='Types'/>
+<Canvas of={ButtonStories.Types} sourceState='none'/>
+<Source code={
+`import { Button } from 'star-components-library';
+
+const MyComponents = () => {
+    return (
+        <Button type='primary'/>
+        <Button type='secondary'/>
+    )
+}
+`
+} of={ButtonStories.Types} language="tsx"/>
+
+<Title children='Sizes'/>
+<Canvas of={ButtonStories.Sizes} sourceState='none'/>
+<Source code={
+`import { Button } from 'star-components-library';
+
+const MyComponents = () => {
+    return (
+        <Button size='sm'/>
+        <Button size='md'/>
+        <Button size='lg'/>
+    )
+}
+`
+} of={ButtonStories.Sizes} language="tsx"/>
+
+<Title children='Shapes'/>
+<Canvas of={ButtonStories.Shapes} sourceState='none'/>
+<Source code={
+`import { Button } from 'star-components-library';
+
+const MyComponents = () => {
+    return (
+        <Button shape='rounded'/>
+        <Button shape='normal'/>
+        <Button shape='circle'/>
+    )
+}
+`
+} of={ButtonStories.Shapes} language="tsx"/>
+
+<Title children='Icon'/>
+<Canvas of={ButtonStories.Icon} sourceState='none'/>
+<Source code={
+`import { Button } from 'star-components-library';
+
+const MyComponents = () => <Button icon='Brain'/>
+`
+} of={ButtonStories.Icon} language="tsx"/>
+
+<Title children='OnClick'/>
+<Canvas of={ButtonStories.OnClick} sourceState='none'/>
+<Source code={
+`import { Button } from 'star-components-library';
+
+const MyComponents = () => <Button onClick={() => alert('click button')}/>
+`
+} of={ButtonStories.OnClick} language="tsx"/>

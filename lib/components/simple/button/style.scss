@@ -22,6 +22,9 @@
         background-color: $WHITE;
         border-color: $GRAY;
         color: $GRAY_DARK;
+        &:hover {
+            background-color: $GRAY_LIGHT;
+        }
     }
 
     &__size-sm {
@@ -47,6 +50,9 @@
 
     &__shape-normal {
         border-radius: 12px;
+    }
+    &__shape-rounded {
+        border-radius: 50px;
     }
     &__shape-circle {
         width: min-content;

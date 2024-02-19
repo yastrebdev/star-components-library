@@ -10,6 +10,8 @@ export const Button: React.FC<SCL_ButtonProps> = ({
     type = 'primary',
     size = 'lg',
     children = `I'm button`,
+    className,
+    style,
     icon,
     shape,
     onClick,
@@ -26,7 +28,8 @@ export const Button: React.FC<SCL_ButtonProps> = ({
                 [`scl-button__shape-${shape}`]: shape,
                 [`scl-button__shape-${shape}-${type}`]: shape,
                 [`scl-button__icon`]: icon,
-            })}>
+            }, className)}
+            style={style}>
             {!isCircle && (
                 <Text
                     type={type === 'primary' ? 'default' : 'secondary'}
@@ -38,6 +41,7 @@ export const Button: React.FC<SCL_ButtonProps> = ({
             )}
             {(icon || isCircle) && (
                 <Icon
+                    testid='scl-button-icon'
                     name={icon}
                     style={{width: iconSize, height: iconSize}}
                 />

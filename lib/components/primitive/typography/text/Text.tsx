@@ -3,7 +3,7 @@ import cn from 'classnames'
 
 export const Text: React.FC<SCL_TypogrphyTextProps> = ({
     type = 'default',
-    children,
+    children = 'default',
     strong,
     bold,
     className,
@@ -18,6 +18,7 @@ export const Text: React.FC<SCL_TypogrphyTextProps> = ({
     const TextElement = (type?: string) => {
         return (
             <span
+                data-testid='scl-typography-text-test'
                 onClick={onClick}
                 className={cn(
                     'scl-typography-text',
@@ -53,7 +54,6 @@ export const Text: React.FC<SCL_TypogrphyTextProps> = ({
             children = textTypes.danger
             return TextElement(textTypes.danger)
         case textTypes.default:
-            children = textTypes.default
             return TextElement()
     }
 }

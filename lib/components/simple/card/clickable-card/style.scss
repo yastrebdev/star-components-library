@@ -3,5 +3,50 @@
 .scl-clickable-card {
     padding: 16px;
     border-radius: 32px;
-    background-color: $GREEN;
+    width: 245px;
+    height: 245px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    @include display-flex(inherit, space-between);
+    flex-direction: column;
+
+    &__type-primary {
+        background-color: $GREEN;
+        &:hover {
+            background-color: $GREEN_DARK;
+        }
+    }
+    &__type-secondary {
+        background-color: $GRAY_LIGHT;
+        border: 1px solid $GRAY;
+        &:hover {
+            background-color: $GRAY;
+        }
+    }
+
+    &__top {
+        @include display-flex(center, space-between);
+        &_icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 100%;
+            @include display-flex(center, center);
+            &-fill {
+                background-color: $WHITE;
+            }
+            &-border {
+                border: 1px solid $BLACK;
+            }
+        }
+    }
+
+    &__title {
+        @include h2;
+        color: $BLACK;
+        margin-bottom: 4px;
+    }
+    &__subtitle {
+        @include h4;
+        color: $GRAY_DARK;
+    }
 }
