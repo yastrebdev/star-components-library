@@ -1,0 +1,27 @@
+import { Meta, Canvas, Source, Title, Controls } from '@storybook/blocks'
+import * as StaticCardStories from './StaticCard.stories'
+
+<Meta of={StaticCardStories} />
+
+<Title children='StaticCard'/>
+<Canvas of={StaticCardStories.Default} sourceState='none'/>
+<Source code={
+`import { Card } from 'star-components-library';
+
+const { StaticCard } = <Card />;
+
+const MyComponents = () => <StaticCard />
+`
+} of={StaticCardStories.Default} language="tsx"/>
+<Controls />
+
+<Title children='Click'/>
+<Canvas of={StaticCardStories.Click} sourceState='none'/>
+<Source code={
+`import { Card } from 'star-components-library';
+
+const { StaticCard } = <Card />;
+
+const MyComponents = () => <StaticCard onClick={() => alert('click StaticCard')} />
+`
+} of={StaticCardStories.Click} language="tsx"/>

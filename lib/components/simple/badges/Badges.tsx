@@ -6,6 +6,7 @@ import './style.scss'
 export const Badges: React.FC<SCL_BadgesProps> = ({
     icon,
     className,
+    style,
     iconName = 'Check',
     children,
     position = 'tr',
@@ -13,6 +14,8 @@ export const Badges: React.FC<SCL_BadgesProps> = ({
     return (
         <div className="scl-badges-wrapper">
             <div
+                data-testid='scl-badges-test'
+                style={style}
                 className={cn(
                     'scl-badges',
                     {
@@ -20,7 +23,7 @@ export const Badges: React.FC<SCL_BadgesProps> = ({
                     },
                     className
                 )}>
-                {icon || <Icon name={iconName} size={16} />}
+                {icon || <Icon testid='scl-badges-icon-test' name={iconName} size={16} />}
             </div>
             {children}
         </div>

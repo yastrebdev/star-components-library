@@ -1,0 +1,44 @@
+import { Meta, Canvas, Source, Title, Controls } from '@storybook/blocks'
+import * as BadgesStories from './Badges.stories'
+
+<Meta of={BadgesStories} />
+
+<Title children='Badges'/>
+<Canvas of={BadgesStories.Default} sourceState='none'/>
+<Source code={
+`import { Badges } from 'star-components-library';
+
+const MyComponents = () => <Badges />
+`
+} of={BadgesStories.Default} language="tsx"/>
+<Controls />
+
+<Title children='Children default'/>
+<Canvas of={BadgesStories.Children} sourceState='none'/>
+<Source code={
+`import { Badges, Avatar } from 'star-components-library';
+
+const MyComponents = () => {
+    return (
+        <Badges>
+            <Avatar />
+        </Badges>
+    )
+}
+`
+} of={BadgesStories.Children} language="tsx"/>
+
+<Title children='Position'/>
+<Canvas of={BadgesStories.Position} sourceState='none'/>
+<Source code={
+`import { Badges, Avatar } from 'star-components-library';
+
+const MyComponents = () => {
+    return (
+        <Badges position='bl'>
+            <Avatar />
+        </Badges>
+    )
+}
+`
+} of={BadgesStories.Position} language="tsx"/>

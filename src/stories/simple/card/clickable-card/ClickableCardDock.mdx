@@ -1,0 +1,32 @@
+import { Meta, Canvas, Source, Title, Controls } from '@storybook/blocks'
+import * as ClickableCardStories from './ClickableCard.stories'
+
+<Meta of={ClickableCardStories} />
+
+<Title children='ClickableCard'/>
+<Canvas of={ClickableCardStories.Default} sourceState='none'/>
+<Source code={
+`import { Card } from 'star-components-library';
+
+const { ClickableCard } = <Card />;
+
+const MyComponents = () => <ClickableCard />
+`
+} of={ClickableCardStories.Default} language="tsx"/>
+<Controls />
+
+<Title children='Types'/>
+<Canvas of={ClickableCardStories.Types} sourceState='none'/>
+<Source code={
+`import { Card } from 'star-components-library';
+
+const { ClickableCard } = <Card />;
+
+const MyComponents = () => {
+    return (
+        <ClickableCard type='prumary'/>
+        <ClickableCard type='secondary'/>
+    )
+}
+`
+} of={ClickableCardStories.Types} language="tsx"/>

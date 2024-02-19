@@ -4,6 +4,13 @@
     justify-content: $jc;
 }
 
+@mixin h2 {
+    font-family: $font-family-sans;
+    font-size: 32px;
+    line-height: 29px;
+    font-weight: 500;
+}
+
 @mixin h4 {
     font-family: $font-family-sans;
     font-size: 18px;

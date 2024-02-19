@@ -4,6 +4,6 @@ import { SCL_ButtonShape, SCL_ButtonSize, SCL_ButtonType } from "components/simp
 export const options = {
     types: ['primary', 'secondary'] as SCL_ButtonType[],
     sizes: ['sm', 'md', 'lg'] as SCL_ButtonSize[],
-    shapes: ['normal', 'circle'] as SCL_ButtonShape[],
+    shapes: ['rounded', 'normal', 'circle'] as SCL_ButtonShape[],
     icons: [icons],
 }
