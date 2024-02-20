@@ -13,14 +13,14 @@ export const StaticCard: React.FC<SCL_CardProps> = ({
     onClick,
 }) => {
     return (
-        <div style={style} className={cn('scl-card', className)}>
+        <div data-testid="scl-card-test" style={style} className={cn('scl-card', className)}>
             <div className="scl-card__left">
                 <span className="scl-card__title">{title}</span>
                 <span className="scl-card__subtitle">{subtitle}</span>
             </div>
             <div className="scl-card__right">
-                <div className="scl-card__icon" onClick={onClick}>
-                    {icon ? icon : <Icon name={iconName} />}
+                <div data-testid='scl-card-icon-test' className="scl-card__icon" onClick={onClick}>
+                    {icon || <Icon name={iconName} />}
                 </div>
             </div>
         </div>

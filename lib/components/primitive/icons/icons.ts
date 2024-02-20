@@ -29,7 +29,8 @@ import {
     Gear as Setting,
     ShareNetwork,
     TrashSimple,
-    Info
+    Info,
+    WarningCircle,
 } from '@phosphor-icons/react'
 
 export const icons = {
@@ -63,7 +64,8 @@ export const icons = {
     Setting,
     ShareNetwork,
     TrashSimple,
-    Info
+    Info,
+    WarningCircle
 };
 
 export type IconName = keyof typeof icons;

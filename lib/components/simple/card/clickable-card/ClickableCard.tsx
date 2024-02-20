@@ -4,7 +4,7 @@ import cn from 'classnames'
 import './style.scss'
 
 export const ClickableCard: React.FC<SCL_StaticCardProps> = ({
-    type = 'secondary',
+    type = 'primary',
     iconName = 'ChatCircle',
     title = 'Text Writer',
     subtitle = 'Youre scenario',
@@ -14,6 +14,7 @@ export const ClickableCard: React.FC<SCL_StaticCardProps> = ({
 }) => {
     return (
         <div
+            data-testid='scl-card-test'
             onClick={onClick}
             style={style}
             className={cn(

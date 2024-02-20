@@ -1,10 +1,12 @@
 import type { Meta } from '@storybook/react'
-import { Message } from 'components/simple/message'
-import { useState } from 'react'
+// import { Message } from 'components/simple/message'
+import { Button } from 'components/simple/button'
+// import { useState } from 'react'
+import { message } from 'components/simple/message'
 
-const meta: Meta<typeof Message> = {
+const meta: Meta<typeof message> = {
     title: 'Simple/Message',
-    component: Message,
+    component: message,
     tags: ['autodocs'],
     decorators: [
         (Story) => (
@@ -17,18 +19,29 @@ const meta: Meta<typeof Message> = {
 
 export default meta
 
-export const Default = () => <Message visible={true} />
-
-export const ClickButton = () => {
-    const [ visible, setVisible ] = useState(false)
-    const viewMessage = () => {
-        setVisible(!visible)
-    }
-
+export const Default = () => {
+    const [messageApi, contextHolder] = message.useMessage()
+    
     return (
         <>
-            <button onClick={viewMessage}>Click</button>
-            <Message visible={visible}/>
+            {contextHolder}
+            <Button onClick={() => messageApi.error('Error')}>Error</Button>
         </>
     )
 }
+
+// export const Default = () => <Message visible={true} />
+
+// export const ClickButton = () => {
+//     const [ visible, setVisible ] = useState(false)
+//     const viewMessage = () => {
+//         setVisible(!visible)
+//     }
+
+//     return (
+//         <>
+//             <button onClick={viewMessage}>Click</button>
+//             <Message visible={visible}/>
+//         </>
+//     )
+// }

@@ -1,0 +1,67 @@
+import { Meta, Canvas, Source, Title, Controls } from '@storybook/blocks'
+import * as InputStories from './Default.stories'
+
+<Meta of={InputStories} />
+
+<Title children='Input'/>
+<Canvas of={InputStories.Default} sourceState='none'/>
+<Source code={
+`import { Input } from 'star-components-library';
+
+const MyComponents = () => <Input />
+`
+} of={InputStories.Default} language="tsx"/>
+<Controls />
+
+<Title children='Icon'/>
+<Canvas of={InputStories.Icon} sourceState='none'/>
+<Source code={
+`import { Input } from 'star-components-library';
+
+const MyComponents = () => <Input icon="DownloadDown" iconColor='#f7b63f' />
+`
+} of={InputStories.Icon} language="tsx"/>
+
+<Title children='Placeholder and value'/>
+<Canvas of={InputStories.PlaceholderAndValue} sourceState='none'/>
+<Source code={
+`import { Input } from 'star-components-library';
+
+const MyComponents = () => {
+    return (
+        <>
+            <Input placeholder='Custom placeholder'/>
+            <Input value='Custom value'/>
+        </>
+    )
+}
+`
+} of={InputStories.PlaceholderAndValue} language="tsx"/>
+
+<Title children='Click'/>
+<Canvas of={InputStories.Click} sourceState='none'/>
+<Source code={
+`import { Input } from 'star-components-library';
+
+const MyComponents = () => {
+    return (
+        <Input
+            button
+            buttonIcon="Brain"
+            onClickButton={(_, value) =>
+                alert(value ? \`Вы ввели: "\${value}"\` : 'Вы ничего не ввели')
+            }
+        />
+    )
+}
+`
+} of={InputStories.Click} language="tsx"/>
+
+<Title children='Change'/>
+<Canvas of={InputStories.Change} sourceState='none'/>
+<Source code={
+`import { Input } from 'star-components-library';
+
+const MyComponents = () => <Input onChange={(value) => console.log(value)}/>
+`
+} of={InputStories.Change} language="tsx"/>

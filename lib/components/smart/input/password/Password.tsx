@@ -5,14 +5,15 @@ import cn from 'classnames'
 import '../style.scss'
 
 export const Password: React.FC<SCL_InputPropsPassword> = ({
-    hideIcon = true,
+    visibleIcon = false,
+    visibleValue = false,
     placeholder = 'password',
+    value,
     iconColor = '#000000',
+    onChange
 }) => {
-    const [visible, setVisible] = useState(false)
+    const [visible, setVisible] = useState(visibleValue)
     const [inputValue, setInputValue] = useState('')
-
-    console.log(inputValue)
 
     const onClickIcon = () => {
         setVisible(!visible)
@@ -27,9 +28,14 @@ export const Password: React.FC<SCL_InputPropsPassword> = ({
                 className="scl-input__field"
                 type={type}
                 placeholder={placeholder}
-                onChange={(e) => setInputValue(e.target.value)}
+                value={value || inputValue}
+                onChange={(e) => {
+                    const value = e.target.value
+                    setInputValue(value)
+                    onChange && onChange(value)
+                }}
             />
-            {hideIcon && (
+            {visibleIcon && (
                 <div
                     data-testid='password-icon'
                     onClick={onClickIcon}

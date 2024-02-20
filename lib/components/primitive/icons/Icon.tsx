@@ -6,7 +6,7 @@ import './style.scss'
 export const Icon = ({
     name = 'User',
     color = 'black',
-    testid,
+    testid = 'scl-icon-element',
     weight,
     className,
     style,

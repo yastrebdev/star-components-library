@@ -6,7 +6,6 @@ import { options } from './constants'
 const meta: Meta<typeof Button> = {
     title: 'Simple/Button',
     component: Button,
-    // tags: ['autodocs'],
 }
 
 export default meta

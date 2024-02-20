@@ -3,13 +3,14 @@ import type { IconName } from "components/primitive/icons"
 
 interface SCL_InputCommonProps {
     placeholder?: string
+    value?: string
     iconColor?: string
     className?: string
     style?: CSSProperties
+    onChange?: (value?: string | number) => void
 }
 
 export interface SCL_InputProps extends SCL_InputCommonProps {
-    value?: string
     icon?: IconName
     buttonIcon?: IconName
     button?: boolean
@@ -18,5 +19,6 @@ export interface SCL_InputProps extends SCL_InputCommonProps {
 }
 
 export interface SCL_InputPropsPassword extends SCL_InputCommonProps {
-    hideIcon?: boolean
+    visibleIcon?: boolean
+    visibleValue?: boolean
 }
