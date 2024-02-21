@@ -1,7 +1,0 @@
-import{j as t}from"./jsx-runtime-vNq4Oc-g.js";import{B as j}from"./Button-BDqmljJF.js";import{r as l,R as u}from"./index-4g5l5LRQ.js";import"./Typography--34a-Zdr.js";import"./index-XNbs-YUW.js";import"./_commonjsHelpers-4gQjN7DL.js";import"./Icon-EbFtFzyR.js";const h=()=>{const[s,r]=l.useState([]),[x,i]=l.useState(!1),a=(e,n)=>{setTimeout(()=>{i(!0)},0);const m={type:e,content:n};r([...s,m]),setTimeout(()=>{i(!1)},3e3),setTimeout(()=>{r(s.filter(M=>M!==m))},3500)},f={success:e=>a("success",e),error:e=>a("error",e),warning:e=>a("warning",e)},E=u.createElement("div",null,s.map((e,n)=>u.createElement("div",{key:n,className:`scl-message ${e.type} ${x&&"scl-message__animation"}`},e.content)));return[f,E]},v=h,c=()=>null;c.useMessage=v;const y={title:"Simple/Message",component:c,tags:["autodocs"],decorators:[s=>t.jsx("div",{style:{height:80},children:t.jsx(s,{})})]},o=()=>{const[s,r]=c.useMessage();return t.jsxs(t.Fragment,{children:[r,t.jsx(j,{onClick:()=>s.error("Error"),children:"Error"})]})};var p,g,d;o.parameters={...o.parameters,docs:{...(p=o.parameters)==null?void 0:p.docs,source:{originalSource:`() => {
-  const [messageApi, contextHolder] = message.useMessage();
-  return <>\r
-            {contextHolder}\r
-            <Button onClick={() => messageApi.error('Error')}>Error</Button>\r
-        </>;
-}`,...(d=(g=o.parameters)==null?void 0:g.docs)==null?void 0:d.source}}};const R=["Default"];export{o as Default,R as __namedExportsOrder,y as default};

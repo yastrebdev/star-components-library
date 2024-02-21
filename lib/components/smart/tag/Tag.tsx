@@ -1,5 +1,5 @@
 import type { SCL_TagProps } from './type'
-import { useState } from 'react'
+import { MouseEvent, useState } from 'react'
 import { Icon } from '../../primitive/icons/Icon'
 import cn from 'classnames'
 import './style.scss'
@@ -7,28 +7,24 @@ import './style.scss'
 export const Tag: React.FC<SCL_TagProps> = ({
     children = 'Im tag',
     className,
+    style,
     closeIcon,
     onClose,
-    preventDefault
+    preventDefault,
 }) => {
     const [visible, setVisible] = useState<boolean>(true)
 
-    onClose = () => {
-        !preventDefault && setVisible(false)
+    const handleClose = (e: MouseEvent<SVGSVGElement>) => {
+        setVisible(preventDefault ? true : false)
+        onClose && onClose(e);
     }
 
     return (
         <>
             {visible && (
-                <div className={cn('scl-tag', className)}>
+                <div data-testid='scl-tag-test' style={style} className={cn('scl-tag', className)}>
                     <span className="scl-tag__text">{children}</span>
-                    {closeIcon && (
-                        <Icon
-                            size={14}
-                            name="X"
-                            onClick={onClose}
-                        />
-                    )}
+                    {closeIcon && <Icon testid='scl-close-icon-test' size={14} name="X" onClick={handleClose} />}
                 </div>
             )}
         </>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-type MessageType = 'success' | 'error' | 'warning';
+type MessageType = 'success' | 'error' | 'warning' | 'info';
 
 interface Message {
     type: MessageType;
@@ -16,21 +16,30 @@ interface MessageApi {
 const useMessage = (): [MessageApi, React.ReactNode] => {
     const [messages, setMessages] = useState<Message[]>([]);
     const [visible, setVisible] = useState(false);
-
+    
+    console.log('1', messages)
+    
     const openMessage = (type: MessageType, content: string) => {
-        setTimeout(() => {
-            setVisible(true)
-        }, 0);
-
         const newMessage: Message = { type, content };
+        console.log('2', messages)
         setMessages([...messages, newMessage]);
 
         setTimeout(() => {
-            setVisible(false)
-        }, 3000);
+            setVisible(true)
+            console.log('3', messages)
+        }, 0);
+
         setTimeout(() => {
-            setMessages(messages.filter(message => message !== newMessage));
-        }, 3500);
+            setVisible(false)
+            console.log('4', messages)
+        }, 3000);
+
+        for (let i = 0; i < messages.length; i++) {
+            setTimeout(() => {
+                setMessages(messages.filter(message => message !== newMessage));
+            }, 3200);
+            console.log('5', messages)
+        }
     };
 
     const messageApi: MessageApi = {
