@@ -1,5 +1,5 @@
+import useMessage from './useMessage'
 import './style.scss'
-import useMessage from './utils/useMessage'
 
 export const message = () => null
 

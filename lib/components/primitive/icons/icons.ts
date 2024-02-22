@@ -30,7 +30,9 @@ import {
     ShareNetwork,
     TrashSimple,
     Info,
-    WarningCircle,
+    WarningDiamond,
+    Warning,
+    CheckCircle
 } from '@phosphor-icons/react'
 
 export const icons = {
@@ -65,7 +67,9 @@ export const icons = {
     ShareNetwork,
     TrashSimple,
     Info,
-    WarningCircle
+    WarningDiamond,
+    Warning,
+    CheckCircle
 };
 
 export type IconName = keyof typeof icons;

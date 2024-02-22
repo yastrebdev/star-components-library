@@ -1,0 +1,39 @@
+import { Meta, Canvas, Source, Title, Controls } from '@storybook/blocks'
+import * as MessageStories from './Message.stories'
+
+<Meta of={MessageStories} />
+
+<Title children='Messages'/>
+<Canvas of={MessageStories.Default} sourceState='none'/>
+<Source code={
+`import { message, Button } from 'star-components-library';
+
+const MyComponents = () => {
+        const [messageApi, contextHolder] = message.useMessage()
+
+    const info = () => {
+        messageApi.open('info', 'info message')
+    }
+    const warning = () => {
+        messageApi.open('warning', 'warning message')
+    }
+    const error = () => {
+        messageApi.open('error', 'error message')
+    }
+    const success = () => {
+        messageApi.open('success', 'success message')
+    }
+
+    return (
+        <>
+            {contextHolder}
+            <Button size='sm' onClick={info}>Info</Button>
+            <Button size='sm' onClick={warning}>Warning</Button>
+            <Button size='sm' onClick={error}>Error</Button>
+            <Button size='sm' onClick={success}>Success</Button>
+        </>
+    )
+}
+`
+} of={MessageStories.Default} language="tsx"/>
+<Controls />

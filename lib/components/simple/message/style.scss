@@ -1,20 +1,21 @@
 @import 'styles/_variables.scss';
 
 .scl-message {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: -120px;
-    z-index: 9999;
-    padding: 16px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    min-width: 150px;
     @include input-text;
     border-radius: 12px;
     box-shadow: 0px 8px 25px 0px rgba(0, 0, 0, 0.15);
-    transition: all .3s ease-in-out;
-    &__animation {
-        top: 20px;
-    }
+}
+
+.Toastify__progress-bar--warning {
+    background-color: $WARNING;
+}
+.Toastify__progress-bar--error {
+    background-color: $DANGER;
+}
+.Toastify__progress-bar--info {
+    background-color: $VIOLET_DARK;
+}
+.Toastify__progress-bar--success {
+    background-color: $SUCCESS;
 }
