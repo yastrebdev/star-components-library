@@ -13,7 +13,9 @@ export const Message = () => {
     return (
         <>
             {contextHolder}
-            <Button size='sm' onClick={info}>Info</Button>
+            <Button size="sm" onClick={info}>
+                Info
+            </Button>
         </>
     )
 }

@@ -16,7 +16,7 @@ const meta: Meta<typeof message> = {
                     gap: 10,
                     justifyContent: 'center',
                     width: '100%',
-                    paddingTop: 40
+                    paddingTop: 40,
                 }}>
                 <Story />
             </div>
@@ -45,10 +45,18 @@ export const Default = () => {
     return (
         <>
             {contextHolder}
-            <Button size='sm' onClick={info}>Info</Button>
-            <Button size='sm' onClick={warning}>Warning</Button>
-            <Button size='sm' onClick={error}>Error</Button>
-            <Button size='sm' onClick={success}>Success</Button>
+            <Button size="sm" onClick={info}>
+                Info
+            </Button>
+            <Button size="sm" onClick={warning}>
+                Warning
+            </Button>
+            <Button size="sm" onClick={error}>
+                Error
+            </Button>
+            <Button size="sm" onClick={success}>
+                Success
+            </Button>
         </>
     )
 }

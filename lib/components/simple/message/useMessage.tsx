@@ -5,11 +5,11 @@ import './style.scss'
 
 type MessageType = 'success' | 'error' | 'warning' | 'info'
 
-interface MessageApi {
+export interface MessageApi {
     open: (type: MessageType, content: string) => void
 }
 
-const useMessage = (): [MessageApi, React.ReactNode] => {
+const useInternalMessage = (): [MessageApi, React.ReactNode] => {
     const messageApi: MessageApi = {
         open: (type, content) => {
             switch (type) {
@@ -53,7 +53,12 @@ const useMessage = (): [MessageApi, React.ReactNode] => {
                     toast.info(content, {
                         className: 'scl-message',
                         icon: (
-                            <Icon testid='scl-message-icon-test' name="Info" color="#8843ff" weight="fill" />
+                            <Icon
+                                testid="scl-message-icon-test"
+                                name="Info"
+                                color="#8843ff"
+                                weight="fill"
+                            />
                         ),
                     })
                     break
@@ -78,4 +83,10 @@ const useMessage = (): [MessageApi, React.ReactNode] => {
     return [messageApi, contextHolder]
 }
 
-export default useMessage
+useInternalMessage[Symbol.iterator] = function* () {
+    yield* this()
+}
+
+export default function useMessage() {
+    return useInternalMessage()
+}
