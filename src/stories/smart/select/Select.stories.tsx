@@ -1,13 +1,12 @@
-import type { Meta } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { Select } from 'components/smart/select'
 
 const meta: Meta<typeof Select> = {
     title: 'Smart/Select',
     component: Select,
-    tags: ['autodocs'],
     decorators: [
         (Story) => (
-            <div style={{ height: 150}}>
+            <div style={{ height: 150, display: 'flex', alignItems: 'start', gap: 10}}>
                 <Story />
             </div>
         ),
@@ -15,6 +14,7 @@ const meta: Meta<typeof Select> = {
 }
 
 export default meta
+type Story = StoryObj<typeof Select>
 
 const opt = [
     { value: 'jack', label: 'Jack' },
@@ -22,9 +22,22 @@ const opt = [
     { value: 'yiminghe', label: 'Yiminghe' },
 ]
 
-export const Default = () => {
-    const onChange = (value: string | number) => {
-        console.log(`selected ${value}`)
+export const Default: Story = {
+    args: {
+        defaultValue: 'jack',
+        iconName: 'CaretDown',
+        value: '',
+        options: opt
     }
-    return <Select onChange={onChange} options={opt}/>
+}
+
+export const Icon = () => <Select iconName='Check' options={opt}/>
+
+export const Values = () => {
+    return (
+        <>
+            <Select defaultValue='yiminghe' options={opt}/>
+            <Select value='Jack' options={opt}/>
+        </>
+    )
 }

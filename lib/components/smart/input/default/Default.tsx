@@ -13,8 +13,9 @@ export const Default: React.FC<SCL_InputProps> = ({
     icon,
     iconColor = '#a0a0a0',
     buttonIcon = 'PaperPlaneRight',
-    button = true,
+    button,
     onClickButton,
+    onChange,
 
     emptyValidation = true,
 }) => {
@@ -45,12 +46,14 @@ export const Default: React.FC<SCL_InputProps> = ({
                 placeholder={placeholder}
                 value={value || inputValue}
                 onChange={(e) => {
-                    setInputValue(e.target.value)
+                    const value = e.target.value
+                    setInputValue(value)
+                    onChange && onChange(value)
                     setEmptyField(false)
                 }}
             />
             {emptyValidation && emptyField && (
-                <div className="scl-input__empty-error">
+                <div data-testid='scl-validation-text-test' className="scl-input__empty-error">
                     Поле не должно быть пустым!
                 </div>
             )}

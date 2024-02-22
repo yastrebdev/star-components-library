@@ -1,14 +1,23 @@
 import type { Meta } from '@storybook/react'
-import { Message } from 'components/simple/message'
-import { useState } from 'react'
+import { Button } from 'components/simple/button'
+import { message } from 'components/simple/message'
 
-const meta: Meta<typeof Message> = {
+const meta: Meta<typeof message> = {
     title: 'Simple/Message',
-    component: Message,
+    component: message,
     tags: ['autodocs'],
     decorators: [
         (Story) => (
-            <div style={{ height: 80}}>
+            <div
+                style={{
+                    height: 200,
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 10,
+                    justifyContent: 'center',
+                    width: '100%',
+                    paddingTop: 40,
+                }}>
                 <Story />
             </div>
         ),
@@ -17,18 +26,37 @@ const meta: Meta<typeof Message> = {
 
 export default meta
 
-export const Default = () => <Message visible={true} />
+export const Default = () => {
+    const [messageApi, contextHolder] = message.useMessage()
 
-export const ClickButton = () => {
-    const [ visible, setVisible ] = useState(false)
-    const viewMessage = () => {
-        setVisible(!visible)
+    const info = () => {
+        messageApi.open('info', 'info message')
+    }
+    const warning = () => {
+        messageApi.open('warning', 'warning message')
+    }
+    const error = () => {
+        messageApi.open('error', 'error message')
+    }
+    const success = () => {
+        messageApi.open('success', 'success message')
     }
 
     return (
         <>
-            <button onClick={viewMessage}>Click</button>
-            <Message visible={visible}/>
+            {contextHolder}
+            <Button size="sm" onClick={info}>
+                Info
+            </Button>
+            <Button size="sm" onClick={warning}>
+                Warning
+            </Button>
+            <Button size="sm" onClick={error}>
+                Error
+            </Button>
+            <Button size="sm" onClick={success}>
+                Success
+            </Button>
         </>
     )
 }

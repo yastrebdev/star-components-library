@@ -1,0 +1,50 @@
+import { Meta, Canvas, Source, Title, Controls } from '@storybook/blocks'
+import * as SwitchStories from './Switch.stories'
+
+<Meta of={SwitchStories} />
+
+<Title children='Switch'/>
+<Canvas of={SwitchStories.Default} sourceState='none'/>
+<Source code={
+`import { Switch } from 'star-components-library';
+
+const MyComponents = () => <Switch />
+`
+} of={SwitchStories.Default} language="tsx"/>
+<Controls />
+
+<Title children='Icons'/>
+<Canvas of={SwitchStories.Icons} sourceState='none'/>
+<Source code={
+`import { Switch } from 'star-components-library';
+
+const MyComponents = () => <Switch iconOff='Sun' iconOn='Moon' />
+`
+} of={SwitchStories.Icons} language="tsx"/>
+
+<Title children='Values'/>
+<Canvas of={SwitchStories.Values} sourceState='none'/>
+<Source code={
+`import { Switch } from 'star-components-library';
+
+const MyComponents = () => {
+    return (
+        <>
+            <Switch defaultValue />
+            <Switch value />
+        </>
+    )
+}
+`
+} of={SwitchStories.Values} language="tsx"/>
+
+<Title children='Change'/>
+<Canvas of={SwitchStories.Change} sourceState='none'/>
+<Source code={
+`import { Switch } from 'star-components-library';
+
+const MyComponents = () => (
+    <Switch onChange={(value) => alert(\`Вы установили значение \${value}\`)} />
+)
+`
+} of={SwitchStories.Change} language="tsx"/>

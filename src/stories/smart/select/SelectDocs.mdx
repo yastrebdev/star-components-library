@@ -1,0 +1,57 @@
+import { Meta, Canvas, Source, Title, Controls } from '@storybook/blocks'
+import * as SelectStories from './Select.stories'
+
+<Meta of={SelectStories} />
+
+<Title children='Input'/>
+<Canvas of={SelectStories.Default} sourceState='none'/>
+<Source code={
+`import { Select } from 'star-components-library';
+
+const opt = [
+    { value: 'jack', label: 'Jack' },
+    { value: 'lucy', label: 'Lucy' },
+    { value: 'yiminghe', label: 'Yiminghe' },
+]
+
+const MyComponents = () => <Input options={opt} />
+`
+} of={SelectStories.Default} language="tsx"/>
+<Controls />
+
+<Title children='Icon'/>
+<Canvas of={SelectStories.Icon} sourceState='none'/>
+<Source code={
+`import { Select } from 'star-components-library';
+
+const opt = [
+    { value: 'jack', label: 'Jack' },
+    { value: 'lucy', label: 'Lucy' },
+    { value: 'yiminghe', label: 'Yiminghe' },
+]
+
+const MyComponents = () => <Input iconName='Check' options={opt} />
+`
+} of={SelectStories.Icon} language="tsx"/>
+
+<Title children='Values'/>
+<Canvas of={SelectStories.Values} sourceState='none'/>
+<Source code={
+`import { Select } from 'star-components-library';
+
+const opt = [
+    { value: 'jack', label: 'Jack' },
+    { value: 'lucy', label: 'Lucy' },
+    { value: 'yiminghe', label: 'Yiminghe' },
+]
+
+const MyComponents = () => {
+    return (
+        <>
+            <Select defaultValue='yiminghe' options={opt}/>
+            <Select value='jack' options={opt}/>
+        </>
+    )
+}
+`
+} of={SelectStories.Values} language="tsx"/>

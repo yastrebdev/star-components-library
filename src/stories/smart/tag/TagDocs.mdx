@@ -1,0 +1,43 @@
+import { Meta, Canvas, Source, Title, Controls } from '@storybook/blocks'
+import * as TagStories from './Tag.stories'
+
+<Meta of={TagStories} />
+
+<Title children='Tag'/>
+<Canvas of={TagStories.Default} sourceState='none'/>
+<Source code={
+`import { Tag } from 'star-components-library';
+
+const MyComponents = () => <Tag />
+`
+} of={TagStories.Default} language="tsx"/>
+<Controls />
+
+<Title children='Close'/>
+<Canvas of={TagStories.Close} sourceState='none'/>
+<Source code={
+`import { Tag } from 'star-components-library';
+
+const MyComponents = () => (
+    <Tag closeIcon onClose={() => alert('you closed the tag')}>
+        Close me
+    </Tag>
+)
+`
+} of={TagStories.Close} language="tsx"/>
+
+<Title children='PreventDefault'/>
+<Canvas of={TagStories.PreventDefault} sourceState='none'/>
+<Source code={
+`import { Tag } from 'star-components-library';
+
+const MyComponents = () => (
+    <Tag
+        closeIcon
+        preventDefault
+        onClose={() => alert("you won't shut me out")}>
+        Close me
+    </Tag>
+)
+`
+} of={TagStories.PreventDefault} language="tsx"/>

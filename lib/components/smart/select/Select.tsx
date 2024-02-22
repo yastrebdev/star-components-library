@@ -57,6 +57,7 @@ export const Select: React.FC<SCL_SelectProps> = ({
     return (
         <div ref={ref} className={'scl-select scl-select__wrapper'}>
             <div
+                data-testid='scl-select-header-test'
                 onClick={onClickHeader}
                 className={cn('scl-select__header', {
                     ['scl-select__header_active']: visible,
@@ -67,6 +68,7 @@ export const Select: React.FC<SCL_SelectProps> = ({
                 </div>
             </div>
             <div
+                data-testid='scl-select-body-test'
                 className={cn('scl-select__body', {
                     [`scl-select__body_vivible`]: visible,
                 })}>

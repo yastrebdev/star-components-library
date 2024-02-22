@@ -5,14 +5,16 @@ import cn from 'classnames'
 import './style.scss'
 
 export const Switch: React.FC<SCL_SwitchProps> = ({
+    className,
+    style,
     iconOff,
     iconOn,
     defaultValue = false,
     value,
-    onChange = () => console.log('chnge'),
+    onChange,
 }) => {
     const [gap, isGap] = useState(false)
-    const [on, isOn] = useState(defaultValue || value)
+    const [on, isOn] = useState<boolean>(defaultValue || value || false)
     const [stretchOn, isStretchOn] = useState(false)
     const [stretchOff, isStretchOff] = useState(false)
 
@@ -29,25 +31,24 @@ export const Switch: React.FC<SCL_SwitchProps> = ({
         isStretchOn(false)
         isStretchOff(false)
         if (event.button !== 0) return
-        isOn(!on || value)
+        isOn(!on || value || false)
     }
 
     return (
-        <div className="scl-switch-wrapper">
+        <div
+            data-testid="scl-switch-test"
+            className={cn('scl-switch-wrapper', className)}
+            style={style}>
             <div
-                onChange={onChange}
-                className={cn('scl-switch')}
+                onClick={() => onChange && onChange(on)}
+                className='scl-switch'
                 onMouseDown={onMouseDown}
                 onMouseUp={onMouseUp}>
                 <div data-testid="scl-switch-icon" className="scl-switch__icon">
-                    {(iconOff || iconOn) && (
-                        <Icon name={iconOff} />
-                    )}
+                    {iconOff && <Icon name={iconOff} />}
                 </div>
                 <div className="scl-switch__icon">
-                    {(iconOff || iconOn) && (
-                        <Icon name={iconOn} />
-                    )}
+                    {iconOn && <Icon name={iconOn} />}
                 </div>
             </div>
             <div
